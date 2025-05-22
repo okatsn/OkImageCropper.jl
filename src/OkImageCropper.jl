@@ -48,7 +48,7 @@ optionally adding some padding.
 
 # Example
 ```julia
-using Main.ImageCropper # Or your module name if you save it in a file
+using OkImageCropper
 
 # Crop white space from input.png and save to output.png
 crop_whitespace("input.png", "output.png")
@@ -59,7 +59,7 @@ crop_whitespace("input.png", "output_padded.png", padding=10)
 # Crop a specific background color (e.g., light gray if it was N0f8)
 # using Images
 # crop_whitespace("input.png", "output_gray_bg.png", target_color=RGB{N0f8}(0.9,0.9,0.9))
-# Write your package code here.
+```
 """
 function crop_whitespace(input_path::String, output_path::String; padding::Int=0, target_color::Union{Nothing,RGBX,Gray}=nothing)
     img = FileIO.load(input_path)
@@ -127,4 +127,4 @@ function crop_whitespace(input_path::String, output_path::String; padding::Int=0
     return true
 end
 
-end # module ImageCropper
+end # module OkImageCropper
