@@ -20,8 +20,8 @@ This is a julia package created using `okatsn`'s preference, and this package is
 
 !!! note Checklist
 
-    - [ ] Create an empty repository (namely, `https://github.com/okatsn/OkImageCropper.jl.git`) on github, and push the local to origin. See [connecting to remote](#tips-for-connecting-to-remote).
-    - [ ] Add `ACCESS_OKREGISTRY` secret in the settings of this repository on Github, or delete both `register.yml` and `TagBot.yml` in `/.github/workflows/`. See [Auto-Registration](#auto-registration).
+    - [x] Create an empty repository (namely, `https://github.com/okatsn/OkImageCropper.jl.git`) on github, and push the local to origin. See [connecting to remote](#tips-for-connecting-to-remote).
+    - [x] Add `ACCESS_OKREGISTRY` secret in the settings of this repository on Github, or delete both `register.yml` and `TagBot.yml` in `/.github/workflows/`. See [Auto-Registration](#auto-registration).
     - [ ] To keep `Manifest.toml` being tracked, delete the lines in `.gitignore`.
     - [ ] You might like to register `v0.0.0` in order to `pkg> dev OkImageCropper` in your environment.
 
