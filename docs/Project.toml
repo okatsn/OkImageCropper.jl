@@ -1,0 +1,3 @@
+[deps]
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
+OkImageCropper = "baabcd0e-1760-42d9-85cb-3fb569e66d9a"
