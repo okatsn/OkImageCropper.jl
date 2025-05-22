@@ -2,24 +2,28 @@ module OkImageCropper
 
 using Images
 using FileIO
+using ColorTypes
 
 export crop_whitespace
 
 """
-    is_white(pixel::RGBX)
+    is_white(pixel::AbstractRGB)
+    is_white(pixel::RGBA)
     is_white(pixel::Gray)
 
 Checks if a pixel is white.
-For RGBX types (like RGBA or RGB), it checks if R, G, and B components are at their maximum (typically 1.0 or 255).
+For RGB types, it checks if R, G, and B components are at their maximum (typically 1.0 or 255).
+For RGBA types, it checks if R, G, and B components are at their maximum, ignoring alpha.
 For Gray types, it checks if the gray value is at its maximum.
 """
-function is_white(pixel::RGBX)
+function is_white(pixel::Union{RGBA,AbstractRGB})
     # Assuming white is (1.0, 1.0, 1.0) for Float types or (255, 255, 255) for N0f8
-    # We check the color channels, ignoring alpha for the definition of "white background"
+    # For RGBA, we check RGB components but ignore alpha
     return red(pixel) == oneunit(typeof(red(pixel))) &&
            green(pixel) == oneunit(typeof(green(pixel))) &&
            blue(pixel) == oneunit(typeof(blue(pixel)))
 end
+
 
 function is_white(pixel::Gray)
     return gray(pixel) == oneunit(typeof(gray(pixel)))
